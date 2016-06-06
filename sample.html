@@ -1,0 +1,94 @@
+<html>
+<head>
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<style>
+.span1{width:93px
+
+float: left;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    font-size: 40px;
+    color: #ccc;
+    width:25%;
+    display:inline-block;
+}
+.row
+{
+background-color: aquamarine;
+    width: 284px;
+    margin: 0px auto;
+    margin-top: 252px;
+}
+
+</style>
+<script>
+$(document).ready(function()
+{
+var count=9;
+var flag=1;
+$('.btn').click(function()
+{
+
+if(!$(this).hasClass("disable"))
+{
+if(flag===1)
+{
+$(this).text("o");
+$(this).addClass("o");
+flag=0;
+}
+else
+{
+$(this).text("x");
+$(this).addClass("x");
+flag=1;
+}
+$(this).addClass("disable");
+count--;
+check();
+if(count===0)
+{
+alert("game draw");
+}
+}
+
+});
+});
+function check()
+{
+if(($('#one').hasClass('o')&&$('#two').hasClass('o')&&$('#three').hasClass('o')) || ($('#four').hasClass('o')&&$('#five').hasClass('o')&&$('#six').hasClass('o'))||($('#seven').hasClass('o')&&$('#eight').hasClass('o')&&$('#nine').hasClass('o')) || ($('#one').hasClass('o')&&$('#four').hasClass('o')&&$('#seven').hasClass('o'))
+||($('#two').hasClass('o')&&$('#five').hasClass('o')&&$('#eight').hasClass('o')) || ($('#three').hasClass('o')&&$('#six').hasClass('o')&&$('#nine').hasClass('o'))
+||($('#one').hasClass('o')&&$('#five').hasClass('o')&&$('#nine').hasClass('o'))||($('#three').hasClass('o')&&$('#five').hasClass('o')&&$('#seven').hasClass('o')))
+{
+alert("o wins");
+}
+else if(($('#one').hasClass('x')&&$('#two').hasClass('o')&&$('#three').hasClass('x')) || ($('#four').hasClass('o')&&$('#five').hasClass('x')&&$('#six').hasClass('x'))||($('#seven').hasClass('x')&&$('#eight').hasClass('x')&&$('#nine').hasClass('x')) || ($('#one').hasClass('x')&&$('#four').hasClass('x')&&$('#seven').hasClass('x'))
+||($('#two').hasClass('x')&&$('#five').hasClass('x')&&$('#eight').hasClass('x')) || ($('#three').hasClass('o')&&$('#six').hasClass('x')&&$('#nine').hasClass('x'))
+||($('#one').hasClass('x')&&$('#five').hasClass('x')&&$('#nine').hasClass('x'))||($('#three').hasClass('x')&&$('#five').hasClass('x')&&$('#seven').hasClass('x')))
+{
+alert(" x wins")
+}
+}
+</script>
+</head>
+<body>
+<div class=tic>
+<ul class="row" id="game">
+      <li id="one" class="btn span1" >+</li>
+      <li id="two" class="btn span1">+</li>
+      <li id="three" class="btn span1">+</li>
+      <li id="four" class="btn span1">+</li>
+      <li id="five" class="btn span1">+</li>
+      <li id="six" class="btn span1">+</li>
+      <li id="seven" class="btn span1">+</li>
+      <li id="eight" class="btn span1">+</li>
+      <li id="nine" class="btn span1">+</li>
+    </ul>
+</div>
+</body>
+</html>
